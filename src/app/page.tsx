@@ -12,10 +12,8 @@ import { cn } from "@/lib/utils";
 export default function Home() {
   const pfp = PlaceHolderImages.find(img => img.id === "profile-photo");
   const pehchaanImg = PlaceHolderImages.find(img => img.id === "project-pehchaan");
-  // Using placeholder IDs for new projects as they aren't in the registry yet, 
-  // falling back to standard placeholders or existing related ones.
-  const studySphereImg = PlaceHolderImages.find(img => img.id === "project-kizashi"); // Fallback
-  const eventSystemImg = PlaceHolderImages.find(img => img.id === "project-segmentation"); // Fallback
+  const studySphereImg = PlaceHolderImages.find(img => img.id === "project-kizashi"); 
+  const eventSystemImg = PlaceHolderImages.find(img => img.id === "project-segmentation"); 
 
   const skills = {
     languages: ["Java", "Python", "JavaScript", "TypeScript", "C++", "SQL"],
@@ -80,8 +78,8 @@ export default function Home() {
 
   const certificates = [
     { title: "Java Programming", issuer: "Oracle / Scaler", date: "FEB 2026" },
-    { title: "Software Engineering", issuer: "IBM / Coursera", date: "JAN 2026" },
-    { title: "Introduction to Generative AI Studio", issuer: "Simplilearn", date: "FEB 2026" }
+    { title: "Software Engineering Specialization", issuer: "IBM / Coursera", date: "JAN 2026" },
+    { title: "Introduction to Generative AI Studio", issuer: "Google Cloud / Simplilearn", date: "FEB 2026" }
   ];
 
   const achievements = [
@@ -106,12 +104,12 @@ export default function Home() {
                 <span className="text-primary glow-text">Simran Kaur</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
-                Software Engineer passionate about building scalable backend architectures, intelligent AI-integrated applications, and seamless full-stack experiences.
+                Developer passionate about building intelligent, scalable backend architectures and seamless full-stack applications.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20" asChild>
-                <a href="#projects">View My Projects</a>
+                <a href="https://github.com/simrann0104" target="_blank" rel="noopener noreferrer">View My Projects</a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/10 hover:bg-white/5" asChild>
                 <a 
