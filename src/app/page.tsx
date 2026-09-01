@@ -77,9 +77,9 @@ export default function Home() {
   ];
 
   const certificates = [
-    { title: "Java Programming", issuer: "Oracle / Scaler", date: "FEB 2026" },
-    { title: "Software Engineering Specialization", issuer: "IBM / Coursera", date: "JAN 2026" },
-    { title: "Introduction to Generative AI Studio", issuer: "Google Cloud / Simplilearn", date: "FEB 2026" }
+    { title: "Java Programming", issuer: "neocolab", date: "JUN 2026" },
+    { title: "Software Engineering", issuer: "Saylor Academy", date: "SEP 2025" },
+    { title: "Introduction to Generative AI Studio", issuer: "Google Cloud", date: "FEB 2026" }
   ];
 
   const achievements = [
