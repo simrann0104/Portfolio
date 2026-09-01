@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -61,7 +60,7 @@ export default function Home() {
       school: "Lovely Professional University",
       period: "2025 - Present",
       location: "Punjab, India",
-      score: "CGPA: 8.20"
+      score: "CGPA: 7.96"
     },
     {
       degree: "Bachelor of Computer Applications (BCA)",
@@ -230,7 +229,7 @@ export default function Home() {
             <div className="space-y-4">
               <h2 className="text-3xl md:text-5xl font-bold">Featured Projects</h2>
               <p className="text-muted-foreground max-w-xl text-lg">
-                Backend engineering meets intelligent full-stack solutions.
+                Backend engineering meets machine learning for smarter digital solutions.
               </p>
             </div>
             <Button variant="link" className="text-primary group" asChild>

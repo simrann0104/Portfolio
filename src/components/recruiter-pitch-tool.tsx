@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -37,7 +36,7 @@ export function RecruiterPitchTool() {
           }
         ],
         achievements: ["Top 10% academic performer at LPU", "EY Techathon 6.0 Participant"],
-        educationSummary: "MCA Candidate at LPU with 8.20 CGPA"
+        educationSummary: "MCA Candidate at LPU with 7.96 CGPA"
       });
       setPitch(result.pitch);
     } catch (error) {
