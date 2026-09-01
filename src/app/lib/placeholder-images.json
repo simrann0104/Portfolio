@@ -26,10 +26,10 @@
       "imageHint": "medical risk"
     },
     {
-      "id": "project-segmentation",
-      "description": "Customer segments visualization and clustering",
+      "id": "project-event-system",
+      "description": "Enterprise Event Coordination platform interface",
       "imageUrl": "/customer.jpg",
-      "imageHint": "market segments"
+      "imageHint": "event management"
     }
   ]
 }

@@ -14,7 +14,7 @@ export default function Home() {
   const pfp = PlaceHolderImages.find(img => img.id === "profile-photo");
   const pehchaanImg = PlaceHolderImages.find(img => img.id === "project-pehchaan");
   const studySphereImg = PlaceHolderImages.find(img => img.id === "project-kizashi"); 
-  const eventSystemImg = PlaceHolderImages.find(img => img.id === "project-segmentation"); 
+  const eventSystemImg = PlaceHolderImages.find(img => img.id === "project-event-system"); 
 
   const skills = {
     languages: ["Java", "Python", "JavaScript", "TypeScript", "C++", "SQL"],
