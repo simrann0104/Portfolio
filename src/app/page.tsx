@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -11,91 +12,59 @@ import { cn } from "@/lib/utils";
 
 export default function Home() {
   const pfp = PlaceHolderImages.find(img => img.id === "profile-photo");
-  const kizashiImg = PlaceHolderImages.find(img => img.id === "project-kizashi");
   const pehchaanImg = PlaceHolderImages.find(img => img.id === "project-pehchaan");
-  const addictionImg = PlaceHolderImages.find(img => img.id === "project-addiction");
-  const segmentationImg = PlaceHolderImages.find(img => img.id === "project-segmentation");
+  // Using placeholder IDs for new projects as they aren't in the registry yet, 
+  // falling back to standard placeholders or existing related ones.
+  const studySphereImg = PlaceHolderImages.find(img => img.id === "project-kizashi"); // Fallback
+  const eventSystemImg = PlaceHolderImages.find(img => img.id === "project-segmentation"); // Fallback
 
   const skills = {
-    languages: ["Java", "Python", "R", "C++", "PHP", "JavaScript"],
-    frameworks: ["NumPy", "Pandas", "Scikit-learn", "Seaborn", "XGBoost", "Statsmodels", "TensorFlow"],
-    fullstack: ["React.js", "Node.js", "Express.js", "Next.js", "FastAPI"],
-    databases: ["MongoDB", "MySQL", "MS-SQL"],
-    tools: ["Jupyter Notebook", "Tableau", "Excel", "Git", "Postman", "VS Code", "Google Colab"],
-    core: ["Data Structures & Algorithms", "DBMS", "Machine Learning", "Data Analytics", "Operating Systems"],
-    soft: ["Analytical Thinking", "Problem Solving", "Team Collaboration", "Adaptability", "Leadership"]
+    languages: ["Java", "Python", "JavaScript", "TypeScript", "C++", "SQL"],
+    frameworks: ["React.js", "Next.js", "Node.js", "Express.js", "FastAPI", "Scikit-learn"],
+    fullstack: ["MERN Stack", "RESTful APIs", "Microservices", "State Management", "Authentication"],
+    databases: ["MongoDB", "MySQL", "PostgreSQL", "Firebase"],
+    tools: ["Git", "Postman", "VS Code", "Docker", "AWS", "Jupyter Notebook"],
+    core: ["Data Structures & Algorithms", "DBMS", "Operating Systems", "Software Engineering", "System Design"],
+    soft: ["Analytical Thinking", "Problem Solving", "Team Collaboration", "Leadership"]
   };
-
-  const experience = [
-    {
-      company: "Prodigy InfoTech",
-      role: "Machine Learning Intern",
-      period: "Feb 2026 - Mar 2026",
-      description: [
-        "Worked on structured machine learning tasks involving data preprocessing, model training, and performance evaluation.",
-        "Utilized Python libraries including NumPy, Pandas, and Scikit-learn to build and test basic predictive models.",
-        "Strengthened understanding of end-to-end ML workflows and applied concepts to real-world datasets."
-      ],
-      tech: ["Scikit-learn", "Pandas", "NumPy", "Matplotlib"]
-    },
-    {
-      company: "Unified Mentor",
-      role: "Data Science Intern",
-      period: "Dec 2024",
-      description: [
-        "Optimized datasets of 50k+ records, improving model training efficiency by 15%.",
-        "Leveraged Python libraries including NumPy, Pandas, and Scikit-learn to develop and deploy robust Machine Learning models.",
-        "Translated complex data analysis into actionable business insights to drive strategic decision-making processes."
-      ],
-      tech: ["Scikit-learn", "Seaborn", "Matplotlib", "Tableau"]
-    }
-  ];
 
   const projects = [
     {
+      title: "StudySphere AI",
+      subtitle: "AI-Powered Learning Platform",
+      description: "A comprehensive learning ecosystem leveraging Generative AI to provide personalized study paths, intelligent content summarization, and real-time query resolution for students.",
+      tech: ["Next.js", "Genkit", "Node.js", "MongoDB", "Tailwind CSS"],
+      image: studySphereImg?.imageUrl,
+      hint: "artificial intelligence"
+    },
+    {
       title: "Pehchaan",
       subtitle: "Voter ID Verification System",
-      description: "Engineered backend architecture for a MERN-based Voter Verification System, integrating a Machine Learning model for identity validation using attributes such as Aadhaar and address.",
-      tech: ["MongoDB", "Express", "React", "Node", "Axios", "Machine Learning"],
+      description: "Engineered a robust Voter Verification System using the MERN stack. Integrated a Machine Learning model for identity validation using Aadhaar data and address verification to prevent fraud.",
+      tech: ["MongoDB", "Express", "React", "Node.js", "Python", "Machine Learning"],
       image: pehchaanImg?.imageUrl,
-      hint: pehchaanImg?.imageHint
+      hint: "security verification"
     },
     {
-      title: "KIZASHI",
-      subtitle: "AI-Based Behavioural Analytics System",
-      description: "Developed a MERN-based behavioural analytics platform integrated with Machine Learning models to detect behavioural drift and predict productivity risks using BDI modelling.",
-      tech: ["MongoDB", "Express", "Python", "FastAPI", "React", "Node", "Scikit-learn"],
-      image: kizashiImg?.imageUrl,
-      hint: kizashiImg?.imageHint
-    },
-    {
-      title: "Addiction Risk Prediction",
-      subtitle: "Behavioral Analytics & Classification",
-      description: "Developed multiclass classification models using Random Forest and XGBoost to predict behavioral addiction patterns. Applied SHAP to interpret model predictions and identify key contributing features.",
-      tech: ["Python", "Scikit-learn", "XGBoost", "Random Forest", "SHAP"],
-      image: addictionImg?.imageUrl,
-      hint: addictionImg?.imageHint
-    },
-    {
-      title: "Customer Segmentation Classification",
-      subtitle: "K-Means Clustering Analysis",
-      description: "Engineered a data-driven customer segmentation model using K-Means to uncover distinct behavioral cohorts and translate patterns into actionable business insights.",
-      tech: ["R", "Clustering", "Tableau"],
-      image: segmentationImg?.imageUrl,
-      hint: segmentationImg?.imageHint
+      title: "Event Management System",
+      subtitle: "Enterprise Event Coordination",
+      description: "Developed a full-stack platform for seamless event planning, attendee management, and real-time scheduling. Features include ticket generation, venue booking, and automated notifications.",
+      tech: ["Java", "Spring Boot", "MySQL", "React", "Bootstrap"],
+      image: eventSystemImg?.imageUrl,
+      hint: "event management"
     }
   ];
 
   const education = [
     {
-      degree: "Master of Computer Applications",
+      degree: "Master of Computer Applications (MCA)",
       school: "Lovely Professional University",
       period: "2025 - Present",
       location: "Punjab, India",
       score: "CGPA: 8.20"
     },
     {
-      degree: "Bachelor of Computer Applications",
+      degree: "Bachelor of Computer Applications (BCA)",
       school: "Lovely Professional University",
       period: "2022 - 2025",
       location: "Punjab, India",
@@ -111,13 +80,14 @@ export default function Home() {
   ];
 
   const certificates = [
-    { title: "Introduction to Generative AI Studio", issuer: "Simplilearn", date: "FEB 2026" },
-    { title: "Java Course - Fundamentals", issuer: "Scaler", date: "FEB 2026" },
-    { title: "RDBMS Introduction", issuer: "IBM", date: "AUG 2025" },
-    { title: "ML & Data Analytics", issuer: "Infosys Springboard", date: "JUN 2025" },
-    { title: "R Programming", issuer: "Coursera", date: "JUL 2024" },
-    { title: "Crash Course on Python", issuer: "Google", date: "APR 2024" },
-    { title: "HTML, CSS & JS", issuer: "John Hopkins University", date: "AUG 2023" }
+    { title: "Java Programming", issuer: "Oracle / Scaler", date: "FEB 2026" },
+    { title: "Software Engineering", issuer: "IBM / Coursera", date: "JAN 2026" },
+    { title: "Introduction to Generative AI Studio", issuer: "Simplilearn", date: "FEB 2026" }
+  ];
+
+  const achievements = [
+    { title: "200+ LeetCode Problems Solved", detail: "Consistent problem-solving in Data Structures and Algorithms.", icon: <Code2 className="h-12 w-12 text-primary mb-4" /> },
+    { title: "Dean's List - Top 10%", detail: "Recognized for academic excellence at Lovely Professional University.", icon: <Award className="h-12 w-12 text-secondary mb-4" /> }
   ];
 
   return (
@@ -130,19 +100,19 @@ export default function Home() {
           <div className="space-y-8">
             <div className="space-y-4">
               <Badge variant="outline" className="border-primary/50 text-primary px-4 py-1">
-                Data Science & Full Stack Developer
+                Full-Stack / Software Developer
               </Badge>
               <h1 className="text-5xl md:text-7xl font-bold leading-tight">
                 Hi, I'm <br />
                 <span className="text-primary glow-text">Simran Kaur</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
-                Developer passionate about intelligent and scalable applications.
+                Software Engineer passionate about building scalable backend architectures, intelligent AI-integrated applications, and seamless full-stack experiences.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20" asChild>
-                <a href="#projects">View My Work</a>
+                <a href="#projects">View My Projects</a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/10 hover:bg-white/5" asChild>
                 <a 
@@ -182,7 +152,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Education Section (Zig Zag) */}
+      {/* Education Section */}
       <section id="education" className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
@@ -191,18 +161,14 @@ export default function Home() {
           </div>
 
           <div className="relative">
-            {/* Center Line for Desktop */}
             <div className="absolute left-1/2 -translate-x-1/2 h-full w-px bg-white/10 hidden md:block" />
-
             <div className="space-y-12 relative">
               {education.map((edu, idx) => (
                 <div key={idx} className={cn(
                   "flex flex-col md:flex-row items-center",
                   idx % 2 === 0 ? "md:justify-end" : "md:justify-start"
                 )}>
-                  {/* Dot on line for Desktop */}
                   <div className="absolute left-1/2 -translate-x-1/2 h-4 w-4 rounded-full bg-background border-2 border-primary shadow-[0_0_8px_rgba(147,104,227,0.5)] hidden md:block z-10" />
-
                   <Card className={cn(
                     "glass border-white/5 p-8 w-full md:w-[45%] hover:border-primary/30 transition-all group relative",
                     idx % 2 === 0 ? "md:ml-auto" : "md:mr-auto"
@@ -214,7 +180,6 @@ export default function Home() {
                           {edu.period}
                         </Badge>
                       </div>
-                      
                       <div className="flex flex-col gap-2 text-muted-foreground">
                         <div className="flex items-center gap-2">
                           <GraduationCap className="h-4 w-4 text-primary" /> 
@@ -225,7 +190,6 @@ export default function Home() {
                           <span className="text-sm">{edu.location}</span>
                         </div>
                       </div>
-
                       <div className="pt-4 border-t border-white/5">
                         <Badge className="bg-secondary/10 text-secondary border-secondary/20 font-bold px-3 py-1">
                           {edu.score}
@@ -240,79 +204,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experience Section */}
-      <section id="experience" className="py-24 bg-card/10">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold">Experience</h2>
-            <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
-          </div>
-
-          <div className="grid gap-8 max-w-4xl mx-auto">
-            {experience.map((exp, idx) => (
-              <Card key={idx} className="glass border-white/5 p-6 hover:border-primary/30 transition-all group">
-                <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
-                  <div>
-                    <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">{exp.company}</h3>
-                    <p className="text-secondary font-medium">{exp.role}</p>
-                  </div>
-                  <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 w-fit">
-                    {exp.period}
-                  </Badge>
-                </div>
-                <ul className="space-y-3 mb-6">
-                  {exp.description.map((item, i) => (
-                    <li key={i} className="text-muted-foreground text-sm flex gap-3">
-                      <span className="text-primary mt-1">•</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex flex-wrap gap-2">
-                  {exp.tech.map(t => (
-                    <Badge key={t} variant="outline" className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                      {t}
-                    </Badge>
-                  ))}
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Skills Matrix */}
-      <section id="skills" className="py-24">
+      <section id="skills" className="py-24 bg-card/10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold">Technical Stack</h2>
+            <h2 className="text-3xl md:text-5xl font-bold">Technical Expertise</h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <SkillCard title="Languages" items={skills.languages} icon={<Code2 className="text-primary" />} />
-            <SkillCard title="ML & Analysis" items={skills.frameworks} icon={<Brain className="text-secondary" />} />
-            <SkillCard title="Development" items={skills.fullstack} icon={<Cpu className="text-primary" />} />
+            <SkillCard title="Development" items={skills.frameworks} icon={<Cpu className="text-secondary" />} />
+            <SkillCard title="Architecture" items={skills.fullstack} icon={<Brain className="text-primary" />} />
             <SkillCard title="Databases" items={skills.databases} icon={<Database className="text-secondary" />} />
-            <SkillCard title="Tools & Platforms" items={skills.tools} icon={<Wrench className="text-primary" />} />
-            <SkillCard title="Core CS" items={skills.core} icon={<Brain className="text-secondary" />} />
+            <SkillCard title="Tools & Cloud" items={skills.tools} icon={<Wrench className="text-primary" />} />
+            <SkillCard title="CS Core" items={skills.core} icon={<Brain className="text-secondary" />} />
           </div>
         </div>
       </section>
 
       {/* Projects Showcase */}
-      <section id="projects" className="py-24 bg-card/20">
+      <section id="projects" className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-5xl font-bold">Featured Work</h2>
+              <h2 className="text-3xl md:text-5xl font-bold">Featured Projects</h2>
               <p className="text-muted-foreground max-w-xl text-lg">
-                Backend engineering meets machine learning for smarter digital solutions
+                Backend engineering meets intelligent full-stack solutions.
               </p>
             </div>
             <Button variant="link" className="text-primary group" asChild>
               <a href="https://github.com/simrann0104" target="_blank" rel="noopener noreferrer">
-                View All Projects <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                View GitHub <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
           </div>
@@ -325,11 +248,11 @@ export default function Home() {
               )}>
                 <div className="relative aspect-video rounded-2xl overflow-hidden">
                   <Image
-                    src={project.image || "https://placehold.co/800x600"}
+                    src={project.image || "https://picsum.photos/seed/project/800/600"}
                     alt={project.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    data-ai-hint={project.hint || "data visualization"}
+                    data-ai-hint={project.hint}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                 </div>
@@ -355,36 +278,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Certificates Vault */}
-      <section id="certificates" className="py-24 bg-card/10">
+      {/* Achievements & Certifications */}
+      <section id="achievements" className="py-24 bg-card/10">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12">Certifications</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {certificates.map((cert, idx) => (
-              <CertCard key={idx} title={cert.title} issuer={cert.issuer} date={cert.date} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Achievements Section */}
-      <section id="achievements" className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Achievements</h2>
-            <div className="w-16 h-1 bg-primary mx-auto rounded-full" />
-          </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-             <Card className="glass border-white/5 flex flex-col items-center justify-center p-8 text-center bg-primary/5 hover:border-primary/30 transition-all">
-              <Award className="h-12 w-12 text-primary mb-4" />
-              <h3 className="font-headline text-xl font-bold mb-2">Top 10% Performance</h3>
-              <p className="text-sm text-muted-foreground">Recognized for academic excellence and nation-level competition participation at Lovely Professional University.</p>
-            </Card>
-            <Card className="glass border-white/5 flex flex-col items-center justify-center p-8 text-center bg-secondary/5 hover:border-secondary/30 transition-all">
-              <Cpu className="h-12 w-12 text-secondary mb-4" />
-              <h3 className="font-headline text-xl font-bold mb-2">EY Techathon 6.0</h3>
-              <p className="text-sm text-muted-foreground">Competed and demonstrated innovative problem-solving in a nation-level tech challenge.</p>
-            </Card>
+          <div className="grid lg:grid-cols-2 gap-16">
+            <div>
+              <h2 className="text-3xl font-bold mb-12">Achievements</h2>
+              <div className="space-y-6">
+                {achievements.map((ach, idx) => (
+                  <Card key={idx} className="glass border-white/5 p-6 hover:border-primary/30 transition-all flex gap-6 items-center">
+                    <div className="shrink-0">{ach.icon}</div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-1">{ach.title}</h3>
+                      <p className="text-sm text-muted-foreground">{ach.detail}</p>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold mb-12">Certifications</h2>
+              <div className="grid gap-4">
+                {certificates.map((cert, idx) => (
+                  <div key={idx} className="glass p-5 rounded-2xl border-white/5 hover:border-primary/20 transition-all flex justify-between items-center group">
+                    <div>
+                      <h4 className="font-bold text-sm mb-1">{cert.title}</h4>
+                      <p className="text-xs text-primary font-medium">{cert.issuer}</p>
+                    </div>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">{cert.date}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -395,8 +320,8 @@ export default function Home() {
           <div className="space-y-4">
             <h2 className="text-4xl font-bold">Let's Connect & <span className="text-primary glow-text">Build.</span></h2>
             <p className="text-muted-foreground text-lg">
-              Open to opportunities in Data Science, ML Engineering, and Full Stack roles. 
-              Available for <span className="text-foreground font-semibold">global projects</span> from Kolkata, India.
+              Open to opportunities in Full-Stack Development and Software Engineering. 
+              Available for <span className="text-foreground font-semibold">innovative projects</span>.
             </p>
           </div>
           
@@ -453,18 +378,5 @@ function SkillCard({ title, items, icon }: { title: string; items: string[]; ico
         </div>
       </CardContent>
     </Card>
-  );
-}
-
-function CertCard({ title, issuer, date }: { title: string; issuer: string; date: string }) {
-  return (
-    <div className="glass p-5 rounded-2xl border-white/5 hover:border-primary/20 transition-all group">
-      <div className="flex justify-between items-start mb-4">
-        <Award className="h-8 w-8 text-secondary group-hover:scale-110 transition-transform" />
-        <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">{date}</span>
-      </div>
-      <h4 className="font-bold text-sm mb-1 leading-snug">{title}</h4>
-      <p className="text-xs text-primary font-medium">{issuer}</p>
-    </div>
   );
 }
