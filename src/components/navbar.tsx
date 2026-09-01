@@ -8,7 +8,6 @@ import { useState, useEffect } from "react";
 const NAV_ITEMS = [
   { name: "About", href: "#hero" },
   { name: "Education", href: "#education" },
-  { name: "Experience", href: "#experience" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Certificates", href: "#certificates" },
